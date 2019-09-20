@@ -112,7 +112,33 @@ const ColorList = (props) => {
         </form>
       )}
       <div className="spacer" />
-      {/* stretch - build another form here to add a color */}
+      <form onSubmit={''}>
+          <legend>Add color</legend>
+          <label>
+            color name:
+            <input
+             type='text'
+             name='name'
+             placeholder='color name'
+             
+             value={colorToEdit.color}
+            />
+          </label>
+          <label>
+            hex code:
+            <input
+             type='text'
+             name='hex'
+             placeholder='hex code'
+              value={colorToEdit.code.hex}
+            />
+          </label>
+          <div className="button-row">
+            <button type="submit">Submit</button>
+           
+          </div>
+        </form>
+      
     </div>
   );
 };
