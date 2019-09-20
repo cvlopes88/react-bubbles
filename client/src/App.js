@@ -15,22 +15,13 @@ function App() {
     <Router>
       <div className="App">
         <Route exact path="/" component={Login} />
-        {/* <Route 
-       exact path='/protected'
-        render={props => {
-         return <BubblePage  {...props}/>
-        }}
-        /> */}
+       
       <PrivateRoute  path='/protected'
       render={props => {
         return <BubblePage  {...props}/>
       }}
       component={BubblePage}/>
-      {/* <Route   path='/colorList/:id' 
-      render={props => 
-         <ColorList   {...props} />
-      }
-      /> */}
+     
       </div>
     </Router>
   );

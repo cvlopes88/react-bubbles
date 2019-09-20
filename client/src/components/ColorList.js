@@ -39,7 +39,7 @@ const ColorList = (props) => {
    
     })
     .then(res => {
-      console.log("pppput", res)
+      
      setColorToEdit(initialColor)
     })
      .catch(err => {
@@ -52,7 +52,14 @@ const ColorList = (props) => {
 
 
   const deleteColor = color => {
-    // make a delete request to delete this color
+    // color.preventDefault();
+    axiosWithAuth()
+    .delete(`/colors/${color.id}`)
+    .then(res => {
+      props.history.push('/protected');
+      
+    })
+    .catch(err => console.log(err))
   };
 
   return (
